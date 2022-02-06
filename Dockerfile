@@ -19,5 +19,7 @@ EXPOSE 138/udp
 EXPOSE 139
 EXPOSE 445
 
+RUN apt install --no-install-recommends samba-vfs-modules -y
+
 RUN /init.sh
 CMD ["smbd", "--foreground", "--log-stdout", "--no-process-group"]
